@@ -1,1 +1,26 @@
-console.log("Hello World");
+function getComputerChoice() {
+    //Create a vairable named choice and intialize it to a random number using Math.random
+    let choice = Math.random();
+    //Multiply the number by 10
+    choice = choice * 10;
+    //Floor the number, so we get a number from 1 to 9 inclusive (can be devided by 3)
+    choice = Math.floor(choice);
+    //IF the number is below or equal to 3 THEN:
+    if (choice <= 3) {
+        //RETURN the string "rock"
+        return "rock";
+    }
+    //ELSE IF the number is below or equal to 6 THEN:
+    else if (choice <= 6) {
+        //RETURN the string "paper"
+        return "paper";
+    }
+    //ELSE:
+    else {
+        //RETURN the string "scissors"
+        return "scissors";
+    }
+    //END IF
+}
+
+console.log(getComputerChoice());
