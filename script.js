@@ -126,7 +126,22 @@ function playRound(humanChoice, computerChoice) {
     //END SWITCH
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+function playGame() {
+    //FOR i in 0 to 4 (<5)
+    for (i = 0; i < 5; i++) {
+        //GET the Human's choice
+        const humanSelection = getHumanChoice();
+        //GET the Computer's choice
+        const computerSelection = getComputerChoice();
 
-playRound(humanSelection, computerSelection);
+        //Play a round of rock paper scissors
+        playRound(humanSelection, computerSelection);
+    }
+    //END FOR
+
+    //Log the final scores
+    console.log(`Human's score: ${humanScore}\nComputer's score ${computerScore}`);
+}
+
+//Start/restart the game on page load/reload
+playGame();
