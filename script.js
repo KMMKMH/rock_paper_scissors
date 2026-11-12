@@ -38,6 +38,7 @@ function getHumanChoice() {
         //Set input to "rock" as default
         input = "rock";
     }
+    //ENF IF
 
     //Turn the input string to all lowercase
     input = input.toLowerCase();
@@ -45,5 +46,87 @@ function getHumanChoice() {
     return input;
 }
 
-console.log(getComputerChoice());
-console.log(getHumanChoice());
+function playRound(humanChoice, computerChoice) {
+    //SWITCH on humanChoice
+    switch(humanChoice) {
+        //CASE it is rock THEN:
+        case "rock":
+            //IF computerChoice is rock THEN:
+            if (computerChoice === "rock") {
+                //LOG tie
+                console.log("It's a tie!");
+            }
+            //ELSE IF it is paper THEN:
+            else if (computerChoice === "paper") {
+                //LOG loose
+                console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
+                //Increment computer's score
+                computerScore++;
+            }
+            //ELSE:
+            else {
+                //LOG win
+                console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+                //Increment human's score
+                humanScore++;
+            }
+            //BREAK
+            break;
+        //CASE it is paper THEN:
+        case "paper":
+            //IF computerChoice is rock THEN:
+            if (computerChoice === "rock") {
+                //LOG win
+                console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+                //Increment human's score
+                humanScore++;
+            }
+            //ELSE IF it is paper THEN:
+            else if (computerChoice === "paper") {
+                //LOG tie
+                console.log("It's a tie!");
+            }
+            //ELSE:
+            else {
+                //LOG loose
+                console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
+                //Increment computer's score
+                computerScore++;
+            }
+            //BREAK
+            break;
+        //CASE it is scissors THEN:
+        case "scissors":
+            //IF computerChoice is rock THEN:
+            if (computerChoice === "rock") {
+                //LOG loose
+                console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
+                //Increment computer's score
+                computerScore++;
+            }
+            //ELSE IF it is paper THEN:
+            else if (computerChoice === "paper") {
+                //LOG win
+                console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+                //Increment human's score
+                humanScore++;
+            }
+            //ELSE:
+            else {
+                //LOG tie
+                console.log("It's a tie!");
+            }
+            //BREAK
+            break;
+        //DEFAULT:
+        default:
+            //Log "Something went wrong, please reload the page."
+            console.log("Something went wrong, please reload the page.");
+    }
+    //END SWITCH
+}
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection);
