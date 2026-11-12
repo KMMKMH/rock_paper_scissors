@@ -1,3 +1,8 @@
+//Create Human's score variable intialized to 0
+let humanScore = 0;
+//Create Computer's score variable intialized to 0
+let computerScore = 0;
+
 function getComputerChoice() {
     //Create a vairable named choice and intialize it to a random number using Math.random
     let choice = Math.random();
